@@ -1,0 +1,556 @@
+$regular: "Roboto-Regular", sans-serif
+$special: "amaticsc-regular", sans-serif
+$special_bold: "amaticsc-bold", sans-serif
+$bold: "Roboto-Bold", sans-serif
+$light: "Roboto-Light", sans-serif
+$accent: #da251c
+
+@function em($px, $base: 16px)
+	@return ($px / $base ) * 1em
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+html, body
+	height: 100%
+
+body
+	font: 16px $regular
+
+.center
+	text-align: center
+
+header
+	height: 100%
+	background: url(../img/header.jpg) no-repeat top
+	background-size: cover
+	padding-top: 46px
+	
+	h1
+		margin-top: 117px
+		text-align: center
+		font: 4.5em $special_bold
+		color: $accent
+	img
+		display: block
+		margin: 0 auto
+		margin-bottom: 40px
+
+.top-contacts
+	text-align: right
+	h3
+		font: 2em $special_bold
+
+	a
+		display: inline-block
+		margin: 0 5px
+
+	.link
+		width: 29px
+		height: 28px
+		cursor: pointer
+		display: inline-block
+		margin-top: 20px
+		opacity: .6
+		transition: .25s
+		&:not(:first-child)
+			margin-left: 12px
+		&:hover
+			opacity: 1
+
+	.link-vk
+		background: url(../img/icons.png) -35px
+	.link-whatsapp
+		background: url(../img/icons.png) 0
+	.link-viber
+		background: url(../img/icons.png) 127px
+	.link-fb
+		background: url(../img/icons.png) 93px
+
+section
+	padding: 160px 0
+
+	.section_title
+		font: 3.688em $special_bold
+		text-align: center
+		margin-bottom: 53px
+
+.pluses
+	text-align: center
+
+	.section_title
+		color: #41592c
+		margin-bottom: 100px
+
+	.plus_elem
+		font: 20px $bold
+		padding-top: 60px
+		color: #2b2b2b
+		position: relative
+		cursor: default
+		&::before
+			content: ''
+			display: block
+			width: 48px
+			height: 48px
+			position: absolute
+			top: 0
+			left: 50%
+			margin-left: -24px
+
+		span
+			border-bottom: 1px solid #ccc
+			padding-bottom: 7px
+			transition: .25s
+
+		.plus_popup
+			position: absolute
+			top: 100px
+			opacity: 0
+			transition: .25s
+			left: 0
+			background: #f1f1f1
+			text-align: left
+			padding: 12px 18px
+			box-shadow: 0 4px 10px -5px rgba(34, 34, 34, 0.4)
+			border-radius: 4px
+			font: .938rem $regular
+			z-index: 7
+			&::before
+				content: ''
+				display: block
+				width: 0
+				height: 0
+				border: 10px solid transparent
+				border-bottom: 10px solid #f1f1f1
+				position: absolute
+				top: -20px
+				left: 50%
+				margin-left: -10px
+
+		&:hover
+			span
+				border-color: #fff
+			.plus_popup
+				opacity: 1
+
+	.plus_elem_life::before
+		background: url(../img/pluses.png) no-repeat 0
+	.plus_elem_luck::before
+		background: url(../img/pluses.png) no-repeat center
+	.plus_elem_free::before
+		background: url(../img/pluses.png) no-repeat 100%
+
+.about
+	background: url(../img/about.jpg) no-repeat center 50%
+	background-attachment: fixed
+	background-size: cover
+	color: #fff
+
+	h6
+		font: 1.188em $light
+		text-align: center
+		margin-bottom: 130px
+
+	*
+		outline: none
+
+.step
+	h5
+		font: 3.250em $special_bold
+		margin-bottom: 20px
+		padding-left: 38px
+		position: relative
+		&::before
+			content: ''
+			display: block
+			width: 28px
+			height: 28px
+			background: url(../img/icons.png) no-repeat -136px
+			position: absolute
+			left: 0
+			top: 50%
+			margin-top: -14px
+		
+		a
+			border-bottom: 1px solid rgba(255, 255, 255, 0.25)
+			padding-bottom: 7px
+			transition: .25s
+			text-decoration: none
+			color: #fff
+			cursor: pointer
+			&:hover
+				border-color: #fff
+
+	margin-bottom: 60px
+
+.step-popup
+	position: relative
+	padding: 37px 20px
+	width: auto
+	max-width: 740px
+	margin: 20px auto
+	line-height: 1.55
+	color: #fff
+	font-size: 1.2em
+	span
+		font: 7em $special_bold
+		display: block
+		text-align: center
+		margin-bottom: 28px
+		color: #f8a024
+
+.mfp-close-btn-in .mfp-close
+	color: #000
+	background: #fff
+	border-radius: 50%
+	padding: 0
+	width: 30px
+	line-height: 20px
+	height: 30px	
+
+.mfp-fade.mfp-bg
+	opacity: 0
+
+	-webkit-transition: all 0.15s ease-out
+	-moz-transition: all 0.15s ease-out
+	transition: all 0.15s ease-out
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready 
+	opacity: 0.9
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing 
+	opacity: 0
+
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content 
+	opacity: 0
+
+	-webkit-transition: all 0.15s ease-out
+	-moz-transition: all 0.15s ease-out
+	transition: all 0.15s ease-out
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content 
+	opacity: 1
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+	opacity: 0
+
+.plus_popup
+	position: relative
+	background: #FFF
+	padding: 20px
+	width: auto
+	max-width: 500px
+	margin: 20px auto
+	color: #3a3a3a
+
+.lead
+	.leader_name
+		text-align: center
+		font: 1.500em $regular
+		
+		p
+			font: italic 1rem $regular
+			margin-top: 5px
+			color: #649876
+			margin-bottom: 100px
+
+	.lead_item
+		padding-left: 30px
+		padding-bottom: 67px
+		position: relative
+		margin-left: 50%
+		&::before
+			content: ''
+			display: block
+			width: 15px
+			height: 15px
+			background: #dc3e38
+			border-radius: 50%
+			position: absolute
+			left: -1px
+			z-index: 5
+			top: 8px
+		&::after
+			content: ''
+			display: block
+			width: 1px
+			height: 100%
+			background: #f8d8d7
+			position: absolute
+			left: 7px
+			top: 10px
+		
+		&:last-child::after
+			display: none
+
+		&:nth-child(2)
+			margin-left: 0
+			margin-right: 50%
+			text-align: right
+			padding-left: 0
+			padding-right: 30px
+			&::before
+				left: auto
+				right: -14px
+			&::after
+				left: auto
+				right: -7px
+
+		.lead_date
+			font: 1.375em $bold
+
+		.lead_text
+			font: 1em $regular
+			color: rgba(0,0,0,.76)
+			margin-top: 5px
+		p
+			margin-bottom: 10px
+
+	.lead_place
+		font: 1.375em $bold
+		text-align: center
+		margin-top: 100px
+		margin-bottom: 50px
+
+.sign_up
+	text-transform: uppercase
+	outline: none
+	background: linear-gradient(#e34741, #dc3e38)
+	color: #fff
+	box-shadow: 0 14px 27px rgba(220, 62, 56, 0.4)
+	border: none
+	padding: 22px 60px
+	border-radius: 10px
+	font: 1.250em $regular
+	letter-spacing: .6px
+	transition: .25s
+	display: inline-block
+	cursor: pointer
+	&:hover
+		box-shadow: 0 7px 10px rgba(220, 62, 56, 0.4)
+		background: linear-gradient(#e34741, #e34741)
+
+.feedbacks
+	background: url(../img/pattern2.png)
+
+	.section_title
+		color: $accent
+
+	.item
+		background: #fff
+		padding: 25px
+		font: italic 1em $regular
+		color: #898989
+		border-radius: 4px
+		box-shadow: 0 14px 27px #e4e4e4
+		position: relative
+		margin-bottom: 30px
+		&::before
+			content: ''
+			display: block
+			width: 28px
+			height: 28px
+			position: absolute
+			left: 10px
+			top: -12px
+			background: url(../img/icons.png) no-repeat 100%
+			background-size: cover
+
+	.owl-dot
+		outline: none
+
+	.item_author
+		font: 1.688em $special_bold
+		color: #000
+		margin-top: 23px
+
+	.owl-stage-outer
+		margin-top: -10px
+		padding-top: 10px
+
+.video
+	background: url(../img/pattern.png)
+	color: #fff
+
+	iframe
+		border: none
+		box-shadow: 0 14px 27px rgba(83, 51, 49, .2)
+		margin-bottom: 57px
+	
+	.video_descr
+		font: 1.125em/1.45 $bold
+		margin-left: 20px
+		padding-left: 20px
+		border-left: 2px solid #fff
+
+	.sign_up
+		font-size: 1.1em
+
+.classes
+	text-align: center
+	background: url(https://i.pinimg.com/originals/ba/1e/6b/ba1e6bef1d01cfa42da01bada626c6e3.jpg) top
+	background-size: cover
+
+.class_item
+	padding: 30px 60px
+	padding-bottom: 0
+	border: 1px solid #dd3f39
+	display: inline-block
+	margin: 0 20px
+	background: #fff
+	margin-top: 40px
+	color: #2c2c2c
+	text-align: left
+	h4
+		font: em(24px) $bold
+		color: #dd3f39
+		margin-bottom: 24px
+		text-align: center
+	.class_when, .class_where
+		font: em(17.5px) $bold
+		line-height: 1.7
+		span
+			color: #dd3f39
+	.class_sign
+		background: #dd3f39
+		text-align: center
+		font: em(18px) $bold
+		color: #fff
+		padding: 14px 0
+		display: block
+		text-decoration: none
+		margin: 0 -60px
+		margin-top: 34px
+		cursor: pointer
+		&:hover
+			background-color: $accent
+
+#class_sign_up
+	background: #fff
+	width: 340px
+	max-width: 340px
+	padding: 30px 45px
+	margin: 0 auto
+	position: relative
+
+	h3
+		font: em(24px) $bold
+		text-align: center
+		margin-bottom: 34px
+		color: #dd3f39
+
+	.class_where, .class_when
+		font: em(17px) $regular
+		line-height: 1.6
+		span
+			color: #dd3f39
+	.class_where
+		margin-bottom: 34px
+
+	label
+		display: block
+		font: em(15.5px) $bold
+		color: #2d2d2d
+		margin-bottom: 15px
+		input
+			outline: none
+			margin-top: 7px
+			padding: 7px 12px
+			font: em(15px) $regular
+			border: 1px solid #ccc
+			width: 100%
+			&:focus
+				border-color: rgba(0,0,0,.45)
+	input[type="submit"]
+		background: #dd3f39
+		color: #fff
+		padding: 12px 0
+		text-align: center
+		display: block
+		border: none
+		outline: none
+		width: 100%
+		margin-top: 34px
+		font: em(17px) $bold
+		cursor: pointer
+		&:hover
+			background-color: $accent
+
+footer
+	background: #6d1112
+	color: #bd6c6d
+	padding: 25px 0
+	font: .875em $regular
+
+	a
+		color: #bd6c6d
+		&:hover
+			color: rgba(255,255,255,.6)
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px)
+	header
+		h1
+			font-size: 3em
+	
+	.top-contacts
+		text-align: center
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px)
+	.pluses
+		font-size: 0.688em!important
+
+	.plus_elem:not(:last-child)
+		margin-bottom: 60px
+
+	.sign_up
+		margin: 0 auto
+		display: block
+		margin-top: 30px
+
+	.step
+		margin-bottom: 100px
+		h5
+			padding-left: 0
+	.step-popup
+		font-size: 15px!important
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px)
+	header
+		background-position: 0 0
+
+	.pluses
+		font-size: 0.875em
+
+	.lead_item
+		margin: 0!important
+
+	.lead .lead_item:nth-child(2)
+		text-align: left
+		padding-left: 30px
+		&::before
+			right: auto
+			left: 0
+		&::after
+			left: 7px
+			right: auto
+
+	.step h5
+		text-align: center
+		&::before
+			left: 50%
+			top: -53px
+			margin-top: 0
+// Large devices (desktops, less than 1200px)
+//@media (max-width: 1199.98px) { ... }
